@@ -8,7 +8,7 @@ If there are any inconsistancies in style or places where it doesn't conform to 
 
 Minimally you will need latex, bibliotex, and biber.
 
-To use the Makefile provide you will also need latexmk.
+To use the Makefile provided you will also need latexmk.
 
 For Ubuntu and Debian based systems, these packages are available.
 ```bash
