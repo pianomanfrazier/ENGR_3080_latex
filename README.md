@@ -2,6 +2,10 @@
 
 The examples here conform the the ENGR 3080 Style Guide.
 
+The resulting pdf is example.pdf
+
+If there are any inconsistancies in style or places where it doesn't conform to the style guide please send me a pull request.
+
 ## Dependencies
 
 Minimally you will need latex, bibliotex, biber.
@@ -15,7 +19,9 @@ sudo apt-get install texlive texlive-latex-extra texlive-bibtex-extra biber
 sudo apt-get install make latexmk
 ```
 
-For Windows or MAC you are on your own. Make a pull request and update the instructions.
+For Windows or MAC you are on your own. Make a pull request and update the instructions for your particular system.
+
+An easy way to use these files would be to import the project into [ShareLatex](https://www.sharelatex.com) or [OverLeaf](https://www.overleaf.com).
 
 ## TODO
 
