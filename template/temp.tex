@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
-\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
 \usepackage[english]{babel}
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage[singlespacing]{setspace}
@@ -93,24 +94,26 @@
 \hypersetup{pageanchor=false}
 \begin{titlepage}
 \centering
-\linespread{1.7}
+\linespread{1.6}
 %{\fontsize{18pt}{24pt}\bfseries\ProposalTitle}\\
 {\Large\bfseries\ProposalTitle}\\
 \vspace{1cm}
 \begin{large}
-Prepared for:\\
+Prepared for:
 \preparee, \prepareeTitle\\
 \company\\
 \address\\
 \end{large}
-\vspace{1cm}
+\vspace{1.5cm}
 
 %%%% Title Page Figure %%%% 
 \iftitlefigure
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[width=0.6\linewidth]{swarmplot}
-		\caption*{\centering\textbf{Swarm Plot Graph.} \textit{This is some caption text.}}
+		\begin{minipage}{8cm}
+		\includegraphics[width=\linewidth]{swarmplot}
+		\caption*{\textbf{Swarm Plot Graph.} \textit{This is some caption text.}}
+		\end{minipage}
 		\label{fig:titlepage}
 	\end{figure}
 	\stepcounter{figure}
@@ -121,11 +124,12 @@ Prepared by:\\
 Student Name, Title\\
 Student Name, Title\\
 Student Name, Title\\
-\vspace{0.7cm}
+\vspace{1cm}
 \today\\
 \end{large}
 
-\vspace{1cm}
+
+\vspace{1.5cm}
 This is an example of what your topic overview might look like.  The purpose of proposal and the main topics covered are identified in this descriptive abstract.
 \end{titlepage}
 \hypersetup{pageanchor=true}
@@ -163,6 +167,9 @@ This is an example of what your topic overview might look like.  The purpose of 
 \blindmathtrue
 \blindtext
 
+Ø£¢¥
+äáàñæø
+
 See my cool truth table (\ref{tab:truthy})
 
 \begin{table} [h!]
@@ -186,18 +193,24 @@ p & q & r & S\\ \hline
 And see my cool Cubehelix Graph (\ref{fig:cubehelix}).
 
 \begin{figure}[!ht]
-	\includegraphics[width=0.4\linewidth]{cubehelixpalette}
+	\centering
+	\begin{minipage}{10cm}
+	\includegraphics[width=\linewidth]{cubehelixpalette}
 	\caption[Figure \thefigure. Cubehelix Graph]{ \textbf{Cubehelix Graph.} \textit{This is some caption text.}}
 	\label{fig:cubehelix}
+	\end{minipage}
 \end{figure}
 
 This is a citation\cite[chapter, p.~15]{greenwade93}.
 And another citation\cite{goossens93}.
 
 \begin{figure}[!ht]
-	\includegraphics[width=0.4\linewidth]{hexbinmarginals}
+	\centering
+	\begin{minipage}{10cm}
+	\includegraphics[width=\linewidth]{hexbinmarginals}
 	\caption[Figure \thefigure. Hexbin Marginal Graph]{ \textbf{Hexbin Graph.} }
 	\label{fig:hexbin}
+	\end{minipage}
 \end{figure}
 
 Here is a crazy equation in \LaTeX

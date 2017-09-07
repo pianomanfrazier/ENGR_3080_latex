@@ -1,7 +1,7 @@
 # Makefile by Drew Silcock
 # found at https://drewsilcock.co.uk/using-make-and-latexmk
 # Allows latexmk to find figures and images
-LATEX=pdflatex
+LATEX=lualatex
 LATEXOPT=--shell-escape
 NONSTOP=--interaction=nonstopmode
 
