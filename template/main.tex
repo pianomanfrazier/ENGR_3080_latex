@@ -5,7 +5,10 @@
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage[singlespacing]{setspace}
 \usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx}
+\usepackage{pdfpages}
 \graphicspath{{./figures/}{./images/}}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{enumitem}
@@ -16,11 +19,25 @@
 % for the bibliography, requires that biber be installed
 \usepackage[backend=biber]{biblatex}
 % specify the bib file to build from
-\addbibresource{temp.bib}
+\addbibresource{main.bib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %          Front Matter Configs         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%% Link Colors %%%%%%%%%%%%
+
+\newcommand\myshade{85}
+\colorlet{mylinkcolor}{violet}
+\colorlet{mycitecolor}{YellowOrange}
+\colorlet{myurlcolor}{Aquamarine}
+
+\hypersetup{
+  linkcolor  = mylinkcolor!\myshade!black,
+  citecolor  = mycitecolor!\myshade!black,
+  urlcolor   = myurlcolor!\myshade!black,
+  colorlinks = true,
+}
 
 %%%%%%%%% TOC formatting %%%%%%%%%
 \setcounter{tocdepth}{2}
@@ -128,9 +145,10 @@ Student Name, Title\\
 \today\\
 \end{large}
 
-
 \vspace{1.5cm}
-This is an example of what your topic overview might look like.  The purpose of proposal and the main topics covered are identified in this descriptive abstract.
+
+\input{./tex/titleoverview}
+
 \end{titlepage}
 \hypersetup{pageanchor=true}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -140,8 +158,7 @@ This is an example of what your topic overview might look like.  The purpose of 
 \pagenumbering{roman}
 \setcounter{page}{1}
 
-\section{Executive Summary}
-\blindtext
+\input{./tex/summary}
 
 \clearpage
 \tableofcontents
@@ -163,89 +180,13 @@ This is an example of what your topic overview might look like.  The purpose of 
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\section{Top Level Section}
-\blindmathtrue
-\blindtext
+\input{./tex/sec1}
+\input{./tex/sec2}
+\input{./tex/sec3}
+\input{./tex/appendixA}
+\input{./tex/appendixB}
 
-Ø£¢¥
-äáàñæø
-
-See my cool truth table (\ref{tab:truthy})
-
-\begin{table} [h!]
-\caption[Table \thetable. Truth Table]{ \textbf{A Truth Table.} } 
-\begin{tabular} {c c c | c}
-p & q & r & S\\ \hline
-1 & 1 & 1 & 1\\
-1 & 1 & 0 & 1\\
-1 & 0 & 1 & 1\\
-1 & 0 & 0 & 1\\
-0 & 1 & 1 & 1\\
-0 & 1 & 0 & 1\\
-0 & 0 & 1 & 1\\
-0 & 0 & 0 & 1\\
-\end{tabular}
-\label{tab:truthy}
-\end{table}
-
-\blindtext
-
-And see my cool Cubehelix Graph (\ref{fig:cubehelix}).
-
-\begin{figure}[!ht]
-	\centering
-	\begin{minipage}{10cm}
-	\includegraphics[width=\linewidth]{cubehelixpalette}
-	\caption[Figure \thefigure. Cubehelix Graph]{ \textbf{Cubehelix Graph.} \textit{This is some caption text.}}
-	\label{fig:cubehelix}
-	\end{minipage}
-\end{figure}
-
-This is a citation\cite[chapter, p.~15]{greenwade93}.
-And another citation\cite{goossens93}.
-
-\begin{figure}[!ht]
-	\centering
-	\begin{minipage}{10cm}
-	\includegraphics[width=\linewidth]{hexbinmarginals}
-	\caption[Figure \thefigure. Hexbin Marginal Graph]{ \textbf{Hexbin Graph.} }
-	\label{fig:hexbin}
-	\end{minipage}
-\end{figure}
-
-Here is a crazy equation in \LaTeX
-\begin{equation} \label{eq:crazy}
-	\frac{\sin(2x + \pi)}{\cos(\int_0^\infty{\lambda_1 + \lambda_2})}
-\end{equation}
-
-See crazy equation (\ref{eq:crazy}).
-
-\section{Level Section}
-\blindtext
-\blinditemize
-\subsection{Second Level Heading}
-\blindtext
-\blindenumerate
-\subsubsection{Third level inline.}
-\blindtext
-\section{Another Section}
-\blindtext
-\par
-\blindtext
-\subsection{Subsection}
-\blindtext
-\section{Another Section}
-\blindtext
-\par
-\blindtext
-\subsection{Subsection}
-\blindtext
-
-\section{Appendix A}
-\blindtext
-\blinditemize
-\section{Appendix B}
-\blindtext
+%\includepdf[pagecommand={\thispagestyle{plain}},pages=1]{./resumes/RyanFrazier_resume.pdf}
 
 \printbibliography
 

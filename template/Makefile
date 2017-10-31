@@ -9,7 +9,7 @@ LATEXMK=latexmk
 LATEXMKOPT=-pdf
 CONTINUOUS=-pvc
 
-MAIN=temp
+MAIN=main
 SOURCES=$(MAIN).tex Makefile
 FIGURES := $(shell find figures/* -type f)
 
